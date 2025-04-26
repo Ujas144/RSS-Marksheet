@@ -1,0 +1,5 @@
+Flask==2.1.0
+gunicorn==20.1.0
+html2pdf==0.0.4  # For PDF generation (if you're using a Python package for this)
+Flask-SQLAlchemy==2.5.1  # If you're using a database for dynamic student data
+Flask-Cors==3.1.1  # If you need to handle CORS for frontend-backend communication
