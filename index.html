@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marksheet Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f2f2f2;
+      background-image: url('/static/logo.png'); /* watermark logo */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 52%;
+      background-attachment: fixed;
+    }
+
+    .header {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .header img {
+      height: 80px;
+    }
+
+    .left-logo {
+      float: left;
+    }
+
+    .right-logo {
+      float: right;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, select {
+      margin: 10px;
+      padding: 10px;
+      width: 220px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 25px;
+      margin-top: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #dob-section {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="/static/logo.png" alt="Left Logo" class="left-logo">
+    <img src="/static/logo1.png" alt="Right Logo" class="right-logo">
+    <h2>RAKSHA SHAKTI SCHOOL</h2>
+    <div class="clear"></div>
+    <p><strong>Check Your Marksheet - Academic Year 2024-25</strong></p>
+  </div>
+
+   <h1>Check Your Marksheet</h1>
+
+  <form id="searchForm" method="POST" action="/check">
+    <input type="text" name="standard" placeholder="Standard (e.g., 10)" required><br>
+    <input type="text" name="section" placeholder="Section (e.g., A)" required><br>
+    <input type="text" name="roll" placeholder="Roll Number" required><br>
+    <button type="button" onclick="checkStudent()">Find Student</button>
+
+    <div id="studentInfo"></div>
+
+    <div id="dob-section">
+      <input type="date" name="dob" id="dobInput" required><br>
+      <button type="submit">View Marksheet</button>
+    </div>
+  </form>
+
+  <script>
+    function checkStudent() {
+      const form = document.getElementById('searchForm');
+      const formData = new FormData(form);
+
+      fetch('/find-student', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.found) {
+          document.getElementById('studentInfo').innerHTML = `<p><strong>Name:</strong> ${data.name}</p>`;
+          document.getElementById('dob-section').style.display = 'block';
+        } else {
+          document.getElementById('studentInfo').innerHTML = `<p style="color:red;">Student not found. Please check the details.</p>`;
+          document.getElementById('dob-section').style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

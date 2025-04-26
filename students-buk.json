@@ -1,0 +1,97 @@
+[
+{
+  "standard": "10",
+    "section": "A",
+    "roll": "15",
+    "name": "Ravi Patel",
+    "dob": "2007-06-12",
+  "subjects": [
+    {
+      "name": "Gujarati",
+      "term1_exam": 68,
+      "term1_internal": 18,
+      "term1_total": 86,
+      "term2_exam": 70,
+      "term2_internal": 17,
+      "term2_total": 87,
+      "final_200": 173,
+      "final_100": 87
+    },
+    {
+      "name": "Hindi",
+      "term1_exam": 60,
+      "term1_internal": 15,
+      "term1_total": 75,
+      "term2_exam": 62,
+      "term2_internal": 18,
+      "term2_total": 80,
+      "final_200": 155,
+      "final_100": 78
+    },
+    {
+      "name": "English",
+      "term1_exam": 72,
+      "term1_internal": 19,
+      "term1_total": 91,
+      "term2_exam": 74,
+      "term2_internal": 18,
+      "term2_total": 92,
+      "final_200": 183,
+      "final_100": 92
+    },
+    {
+      "name": "Sanskrit",
+      "term1_exam": 65,
+      "term1_internal": 20,
+      "term1_total": 85,
+      "term2_exam": 63,
+      "term2_internal": 18,
+      "term2_total": 81,
+      "final_200": 166,
+      "final_100": 83
+    },
+    {
+      "name": "Mathematics",
+      "term1_exam": 75,
+      "term1_internal": 20,
+      "term1_total": 95,
+      "term2_exam": 78,
+      "term2_internal": 19,
+      "term2_total": 97,
+      "final_200": 192,
+      "final_100": 96
+    },
+    {
+      "name": "Science",
+      "term1_exam": 70,
+      "term1_internal": 20,
+      "term1_total": 90,
+      "term2_exam": 72,
+      "term2_internal": 18,
+      "term2_total": 90,
+      "final_200": 180,
+      "final_100": 90
+    },
+    {
+      "name": "Social Science",
+      "term1_exam": 68,
+      "term1_internal": 19,
+      "term1_total": 87,
+      "term2_exam": 65,
+      "term2_internal": 17,
+      "term2_total": 82,
+      "final_200": 169,
+      "final_100": 85
+    }
+  ],
+  "total_final_100": 87.5,
+  "grades": {
+    "Drawing": "A",
+    "Yoga, H.E. & P.E.": "A+",
+    "Computer": "A+"
+  },
+  "result": "Pass",
+  "percentage": "87.5%",
+  "overall_grade": "A+"
+}
+]
